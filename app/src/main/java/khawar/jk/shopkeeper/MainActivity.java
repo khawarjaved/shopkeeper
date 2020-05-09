@@ -2,12 +2,14 @@ package khawar.jk.shopkeeper;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 EditText username;
@@ -31,8 +33,15 @@ Button buttonlogin;
             @Override
             public void onClick(View v) {
                 String item = spinner.getSelectedItem().toString();
-                if (username.getText().toString().equals("admin")&& userpassword.getText().toString().equals("admin")&& item.equals("admin"));
-                
+                if (username.getText().toString().equals("admin")&& userpassword.getText().toString().equals("admin")&& item.equals("admin")) {
+                    Intent intent = new Intent(MainActivity.this, listitem.class);
+                    startActivity(intent);
+                }else if (username.getText().toString().equals("admin")&& userpassword.getText().toString().equals("admin")&& item.equals("user")) {
+                    Intent intent = new Intent(MainActivity.this, listitem.class);
+                    startActivity(intent);
+            }else {
+                    Toast.makeText(getApplicationContext(),"ERROR", Toast.LENGTH_LONG).show();
+                }
             }
         });
     }
