@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="descriptionText" type="id">button</item>
+    <item name="titleText" type="id">text</item>
+    <item name="imagenext" type="id">image</item>
+</resources>
