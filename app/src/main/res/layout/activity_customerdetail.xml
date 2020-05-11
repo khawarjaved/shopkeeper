@@ -4,12 +4,32 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Customerdetail">
 
-    <TextView
+    <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/editcustomername"
+        android:hint="Customer Name"
+        android:textSize="20dp"
+        android:layout_marginTop="100dp"/>
 
-        android:text="customer"/>
+        <Button
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="30dp"
+            android:id="@+id/addbutton"
+            android:text="add customer name"/>
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_margin="30dp"
+        android:id="@+id/viewbutton"
+        android:text="view customer name"/>
+
+
 
 </LinearLayout>
