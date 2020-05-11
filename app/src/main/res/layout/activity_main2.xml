@@ -9,7 +9,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:id="@+id/imagenext"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="100dp"
         android:layout_centerHorizontal="true"
         android:src="@mipmap/ic_launcher"/>
     <TextView
@@ -34,6 +34,7 @@
         android:layout_below="@id/titleText"/>
     <Button
         android:layout_width="180dp"
+        android:id="@+id/buttonbuy"
         android:layout_height="wrap_content"
         android:layout_below="@id/descriptionText"
         android:layout_centerHorizontal="true"
@@ -43,6 +44,17 @@
         android:background="@color/whiteColor"
         android:text="Buy Now"
         android:textSize="20dp"/>
-
+    <Button
+        android:layout_width="180dp"
+        android:id="@+id/customerdetail"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/buttonbuy"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="60dp"
+        android:bufferType="editable"
+        android:textStyle="bold"
+        android:background="@color/whiteColor"
+        android:text="Customer Detail"
+        android:textSize="20dp"/>
 
 </RelativeLayout>
