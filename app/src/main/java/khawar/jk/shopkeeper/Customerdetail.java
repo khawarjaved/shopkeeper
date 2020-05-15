@@ -10,9 +10,9 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class Customerdetail extends AppCompatActivity {
-Button addbutton,viewbutton;
-EditText editcustomername;
-DatabaseHalper mDatabasehalper;
+ private Button addbutton,viewbutton;
+private EditText editcustomername,editcustomersurname,editcustomerphone;
+DatabaseHalper myDB;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,39 +20,23 @@ DatabaseHalper mDatabasehalper;
         addbutton = findViewById(R.id.addbutton);
         viewbutton = findViewById(R.id.viewbutton);
         editcustomername= findViewById(R.id.editcustomername);
-
-        mDatabasehalper = new DatabaseHalper(this);
-
+        editcustomersurname= findViewById(R.id.editcustomersurname);
+        editcustomerphone= findViewById(R.id.editcustomerphone);
+        myDB = new DatabaseHalper(this);
+        AddData();
+    }
+        public void AddData(){
         addbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String newEntry = editcustomername.getText().toString();
-                if (editcustomername.length() != 0){
-                    AddData(newEntry);
-                    editcustomername.setText("");
-                }else {
-                    toastMessage("you must put the something in text filed");
-                }
-            }
-        });
-        viewbutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Customerdetail.this,Customerlist.class);
-                startActivity(intent);
-            }
-        });
-    }
-    public void AddData(String newEntry){
-        boolean insertData = mDatabasehalper.addData(newEntry);
-        if (insertData){
-            toastMessage("Data successfully inserted");
-        }else {
-            toastMessage("Something went wrong");
-        }
-    }
+              boolean isInserted =  myDB.insertData(editcustomername.getText().toString(),editcustomersurname.getText().toString(),
+                        editcustomerphone.getText().toString());
+              if (isInserted = true)
+                  Toast.makeText(Customerdetail.this,"Data Inserted",Toast.LENGTH_LONG).show();
+                  else
+                  Toast.makeText(Customerdetail.this,"Data not Inserted",Toast.LENGTH_LONG).show();
 
-    private void toastMessage(String message) {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

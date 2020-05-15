@@ -11,8 +11,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class Main2Activity extends AppCompatActivity {
-    ImageView imageView;
-    TextView title, description;
+   ImageView imageView;
+     TextView title, description;
     int position;
      Button Customerdetail;
     @Override
